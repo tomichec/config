@@ -37,7 +37,7 @@ green=$(tput setaf 2)
 magenta=$(tput setaf 5)
 cyan=$(tput setaf 6)
 
-PS1='\[$cyan\][\t]\[$reset\] \[$red\]${?/^0$/}\[$reset\] \[$blue\]\w\[$reset\] \[$magenta\]$(__git_ps1 " (%s)")\[$reset\] \[$red\]\$ \[$reset\] '
+PS1='\[$green\](\u@\h)\[$reset\] \[$cyan\][\t]\[$reset\] \[$red\]${?/^0$/}\[$reset\] \[$blue\]\w\[$reset\] \[$magenta\]$(__git_ps1 " (%s)")\[$reset\] \[$red\]\$ \[$reset\] '
 
 
 ############################################################
