@@ -9,9 +9,6 @@ alias lnd-alice="lnd --rpcport=10001 --peerport=10011 --restport=8001"
 alias lnd-bob="lnd --rpcport=10002 --peerport=10012 --restport=8002"
 alias lnd-charlie="lnd --rpcport=10003 --peerport=10013 --restport=8003"
 
-source ~/.lncli.bash-completion
-source ~/.lightning-cli.bash-completion
-
 complete -F _lncli lncli-alice
 complete -F _lncli lncli-bob
 complete -F _lncli lncli-charlie

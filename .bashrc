@@ -290,6 +290,13 @@ alias newid='sudo killall -HUP tor'
 alias lpr='lpr -U ts498 -o fit-to-page'
 
 source ~/.lightning_bashrc
+source ~/.lncli.bash-completion
+source ~/.lightning-cli.bash-completion
 
 # alias for termbin, use `echo test | termbin`
 alias termbin="nc termbin.com 9999"
+
+# simple jezevec chat
+say() {
+    echo `whoami` `ds`: $@ >> ~/jezevec.txt
+}
