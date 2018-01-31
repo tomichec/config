@@ -1,4 +1,4 @@
-INHOME=".git-prompt.sh .bashrc .lncli.bash-completion .lightning-cli.bash-completion"
+INHOME=".git-prompt.sh .bashrc .lncli.bash-completion .lightning-cli.bash-completion .git-completion.bash .lightning_bashrc"
 
 for f in $INHOME
 do
