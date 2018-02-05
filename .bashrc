@@ -37,7 +37,7 @@ green=$(tput setaf 2)
 magenta=$(tput setaf 5)
 cyan=$(tput setaf 6)
 
-PS1='\[$green\](\u@\h)\[$reset\] \[$cyan\][\t]\[$reset\] \[$red\]${?/^0$/}\[$reset\] \[$blue\]\w\[$reset\] \[$magenta\]$(__git_ps1 " (%s)")\[$reset\] \[$red\]\$ \[$reset\] '
+PS1='\n\[$green\](\u@\h)\[$reset\] \[$cyan\][\D{%b%d@%H:%M}]\[$reset\] \[$red\]${?/^0$/}\[$reset\] \[$blue\]\w\[$reset\] \[$magenta\]$(__git_ps1 " (%s)")\[$reset\]\n \[$red\]\$ \[$reset\] '
 
 
 ############################################################
@@ -289,9 +289,9 @@ alias newid='sudo killall -HUP tor'
 
 alias lpr='lpr -U ts498 -o fit-to-page'
 
-source ~/.lightning_bashrc
 source ~/.lncli.bash-completion
 source ~/.lightning-cli.bash-completion
+source ~/.lightning_bashrc
 
 # alias for termbin, use `echo test | termbin`
 alias termbin="nc termbin.com 9999"
