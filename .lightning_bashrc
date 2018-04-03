@@ -1,13 +1,13 @@
 export GOPATH=~/gocode
 export PATH=$PATH:$GOPATH/bin
 
-alias lncli-alice="lncli --rpcserver=localhost:10001 --no-macaroons"
-alias lncli-bob="lncli --rpcserver=localhost:10002 --no-macaroons"
-alias lncli-charlie="lncli --rpcserver=localhost:10003 --no-macaroons"
+alias lncli-alice="lncli --rpcserver=localhost:10001 --macaroonpath ./test_data/admin.macaroon"
+alias lncli-bob="lncli --rpcserver=localhost:10002 --macaroonpath ./test_data/admin.macaroon"
+alias lncli-charlie="lncli --rpcserver=localhost:10003 --macaroonpath ./test_data/admin.macaroon"
 
-alias lnd-alice="lnd --rpcport=10001 --peerport=10011 --restport=8001"
-alias lnd-bob="lnd --rpcport=10002 --peerport=10012 --restport=8002"
-alias lnd-charlie="lnd --rpcport=10003 --peerport=10013 --restport=8003"
+alias lnd-alice="lnd --rpclisten=10001 --listen=10011 --restlisten=8001"
+alias lnd-bob="lnd --rpclisten=10002 --listen=10012 --restlisten=8002"
+alias lnd-charlie="lnd --rpclisten=10003 --listen=10013 --restlisten=8003"
 
 complete -F _lncli lncli-alice
 complete -F _lncli lncli-bob
@@ -25,4 +25,4 @@ alias lnc="make -f ~/config/.lncli.mk"
 
 complete -F _lncli lnc
 
-export PATH=$PATH:/home/tom/bin/bitcoin-0.15.1/bin/
+export PATH=$PATH:/opt/bitcoin-0.16.0/bin/

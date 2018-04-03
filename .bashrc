@@ -280,6 +280,7 @@ alias gsh='git status |head'
 alias genpsw='openssl rand -base64 12'
 alias matrix='tr -cd 0-9 < /dev/urandom | fold -w 78 | perl -e "while(<>){s/(.{10})/\$1 /g;print;}" | cat $(echo -e "\033[0;32m") -'
 alias make='time make'
+alias htmldump='w3m -dump -T text/html'
 # }}}
 
 whatismyip (){
@@ -300,3 +301,7 @@ alias termbin="nc termbin.com 9999"
 say() {
     echo `whoami` `ds`: $@ >> ~/jezevec.txt
 }
+
+# android programming
+export ANDROID_HOME=$HOME/Android/Sdk/
+export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
