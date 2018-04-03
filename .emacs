@@ -66,7 +66,8 @@
      ("melpa" . "http://melpa.milkbox.net/packages/"))))
  '(package-selected-packages
    (quote
-    (auctex multiple-cursors markdown-mode langtool chess))))
+    (smartparens flycheck company-php company-web auctex multiple-cursors markdown-mode langtool chess)))
+ '(safe-local-variable-values (quote ((sh-indent-comment . t)))))
 ;; activate RefTeX
 (add-hook 'latex-mode-hook 'turn-on-reftex)
 (add-hook 'LaTeX-mode-hook 'turn-on-reftex)
@@ -171,3 +172,24 @@
 (el-get 'sync)
 
 (require 'solidity-mode)
+
+
+;; php-mode https://www.emacswiki.org/emacs/PhpMode
+(add-to-list 'load-path "~/.emacs.d/php-mode-1.13.1")
+(autoload 'php-mode "php-mode" "Major mode for editing PHP code." t)
+(add-to-list 'auto-mode-alist '("\\.php$" . php-mode))
+(add-to-list 'auto-mode-alist '("\\.inc$" . php-mode))
+(add-hook 'php-mode-hook 'smartparens-mode)
+
+;; use company-mode in all buffers https://company-mode.github.io/
+(add-hook 'after-init-hook 'global-company-mode)
+;; set a shorter delay
+(setq company-idle-delay 0.1)
+
+;; use flycheck-mode
+(add-hook 'after-init-hook #'global-flycheck-mode)
+;; (add-hook 'after-init-hook 'global-flycheck-mode)
+
+
+(provide '.emacs)
+;;; .emacs ends here
