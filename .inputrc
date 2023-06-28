@@ -4,4 +4,5 @@
 "":history-search-forward
 
 set show-all-if-unmodified on
-# set show-all-if-ambiguous on
+# set show-all-if-ambiguous on-e
+set completion-ignore-case On
