@@ -292,6 +292,10 @@ dud (){
     sdcv -u Duden $@ | perl -n -e 's@(\d\.)@\n\n$1@g;print'
 }
 
+ts2date (){
+    date --date="@$@"
+}
+
 whatismyip (){
 curl -s checkip.dyndns.org | sed -e 's/.*Current IP Address: //' -e 's/<.*$//'  
 }
