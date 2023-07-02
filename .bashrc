@@ -278,8 +278,7 @@ alias cpr='cp -R'                    # copy recursively
 
 ## Shortcuts ## {{{
 alias ipython='ipython3'
-alias oxd="sdcv -u Oxford\ Advanced\ Learner\'s\ Dictionary"
-alias dud="sdcv -u Duden\ Deutsch\-Deutsch\ Lexikon "
+alias oxd="sdcv -u Oxford English Dictionary 2nd Ed. P1"
 alias genpsw='openssl rand -base64 12'
 alias matrix='tr -cd 0-9 < /dev/urandom | fold -w 100 | perl -e "while(<>){s/(.{10})/\$1 /g;print;}" | cat $(echo -e "\033[0;32m") -'
 alias cal='cal -m'
@@ -289,6 +288,9 @@ alias matrix='tr -cd 0-9 < /dev/urandom | fold -w 78 | perl -e "while(<>){s/(.{1
 alias make='time make'
 alias htmldump='w3m -dump -T text/html'
 # }}}
+dud (){
+    sdcv -u Duden $@ | perl -n -e 's@(\d\.)@\n\n$1@g;print'
+}
 
 whatismyip (){
 curl -s checkip.dyndns.org | sed -e 's/.*Current IP Address: //' -e 's/<.*$//'  
