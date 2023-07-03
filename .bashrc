@@ -278,7 +278,7 @@ alias cpr='cp -R'                    # copy recursively
 
 ## Shortcuts ## {{{
 alias ipython='ipython3'
-alias oxd="sdcv -u Oxford English Dictionary 2nd Ed. P1"
+alias oxd="sdcv -u 'Oxford English Dictionary 2nd Ed. P1'"
 alias genpsw='openssl rand -base64 12'
 alias matrix='tr -cd 0-9 < /dev/urandom | fold -w 100 | perl -e "while(<>){s/(.{10})/\$1 /g;print;}" | cat $(echo -e "\033[0;32m") -'
 alias cal='cal -m'
@@ -286,6 +286,7 @@ alias gsh='git status |head'
 alias genpsw='openssl rand -base64 12'
 alias matrix='tr -cd 0-9 < /dev/urandom | fold -w 78 | perl -e "while(<>){s/(.{10})/\$1 /g;print;}" | cat $(echo -e "\033[0;32m") -'
 alias make='time make'
+alias cmake='time cmake'
 alias htmldump='w3m -dump -T text/html'
 # }}}
 dud (){
@@ -318,3 +319,5 @@ say() {
 # android programming
 # export ANDROID_HOME=$HOME/Android/Sdk/
 # export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
+
+export PATH=${PATH}:${HOME}/Software/openCARP.master/build/bin/
