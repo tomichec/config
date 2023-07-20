@@ -321,3 +321,5 @@ say() {
 # export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 
 export PATH=${PATH}:${HOME}/Software/openCARP.master/build/bin/
+
+source $HOME/.accounting
