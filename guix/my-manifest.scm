@@ -24,6 +24,7 @@
    ;; internet
    "remmina"
    "openssh"
+   "rsync"
    "openvpn"
    "nmap"
    "hexchat"
