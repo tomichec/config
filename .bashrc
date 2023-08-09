@@ -68,7 +68,8 @@ green=$COLOR_GREEN
 magenta=$COLOR_PURPLE
 cyan=$COLOR_CYAN
 
-PS1="\n\[$green\](\u@\h)\[$reset\] \[$cyan\][\D{%s}]\[$reset\] \[$red\]${?/^0$/}\[$reset\] \[$blue\]\w\[$reset\] \[$magenta\]$(__git_ps1 " (%s)")\[$reset\]\n \[$red\]\$ \[$reset\] "
+GIT_PS1='$(__git_ps1 " (%s)")'
+PS1="\n\[$green\](\u@\h)\[$reset\] \[$cyan\][\D{%s}]\[$reset\] \[$red\]${?/^0$/}\[$reset\] \[$blue\]\w\[$reset\] \[$magenta\]$GIT_PS1\[$reset\]\n \[$red\]\$ \[$reset\] "
 
 
 ############################################################
@@ -347,4 +348,4 @@ say() {
 export PATH=${PATH}:${HOME}/Software/openCARP.master/build/bin/
 
 # source $HOME/.accounting
-export GUIX_LOCPATH="$HOME/.guix-profile/lib/locale"
+source $HOME/.bashrc.guix
