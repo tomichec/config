@@ -36,15 +36,39 @@ source ~/.git-prompt.sh
 
 
 #PS1='[\u@\h \W]\$ '  # To leave the default one
-#DO NOT USE RAW ESCAPES, USE TPUT
-reset=$(tput sgr0)
-red=$(tput setaf 1)
-blue=$(tput setaf 4)
-green=$(tput setaf 2)
-magenta=$(tput setaf 5)
-cyan=$(tput setaf 6)
+COLOR_NC='\e[0m' # No Color
+COLOR_BLACK='\e[0;30m'
+COLOR_GRAY='\e[1;30m'
+COLOR_RED='\e[0;31m'
+COLOR_LIGHT_RED='\e[1;31m'
+COLOR_GREEN='\e[0;32m'
+COLOR_LIGHT_GREEN='\e[1;32m'
+COLOR_BROWN='\e[0;33m'
+COLOR_YELLOW='\e[1;33m'
+COLOR_BLUE='\e[0;34m'
+COLOR_LIGHT_BLUE='\e[1;34m'
+COLOR_PURPLE='\e[0;35m'
+COLOR_LIGHT_PURPLE='\e[1;35m'
+COLOR_CYAN='\e[0;36m'
+COLOR_LIGHT_CYAN='\e[1;36m'
+COLOR_LIGHT_GRAY='\e[0;37m'
+COLOR_WHITE='\e[1;37m'
 
-PS1='\n\[$green\](\u@\h)\[$reset\] \[$cyan\][\D{%s}]\[$reset\] \[$red\]${?/^0$/}\[$reset\] \[$blue\]\w\[$reset\] \[$magenta\]$(__git_ps1 " (%s)")\[$reset\]\n \[$red\]\$ \[$reset\] '
+#DO NOT USE RAW ESCAPES, USE TPUT
+# reset=$(tput sgr0)
+# red=$(tput setaf 1)
+# blue=$(tput setaf 4)
+# green=$(tput setaf 2)
+# magenta=$(tput setaf 5)
+# cyan=$(tput setaf 6)
+reset=$COLOR_NC
+red=$COLOR_RED
+blue=$COLOR_BLUE
+green=$COLOR_GREEN
+magenta=$COLOR_PURPLE
+cyan=$COLOR_CYAN
+
+PS1="\n\[$green\](\u@\h)\[$reset\] \[$cyan\][\D{%s}]\[$reset\] \[$red\]${?/^0$/}\[$reset\] \[$blue\]\w\[$reset\] \[$magenta\]$(__git_ps1 " (%s)")\[$reset\]\n \[$red\]\$ \[$reset\] "
 
 
 ############################################################
@@ -238,13 +262,13 @@ cs () { cd $@; ls ; }
 
 ## searching ## {{{
 # ff:  to find a file under the current directory
-ff ()  { /usr/bin/find . -iname "$@" ; }
+ff ()  { find . -iname "$@" ; }
 # ffs: to find a file whose name starts with a given string
-ffs () { /usr/bin/find . -iname "$@"'*' ; }
+ffs () { find . -iname "$@"'*' ; }
 # ffe: to find a file whose name ends with a given string
-ffe () { /usr/bin/find . -iname '*'"$@" ; }
+ffe () { find . -iname '*'"$@" ; }
 # fff:  to find a file whose name contains a given string
-fff () { /usr/bin/find . -iname '*'"$@"'*' ; }
+fff () { find . -iname '*'"$@"'*' ; }
 # }}}
 
 ## network related ## {{{
@@ -322,4 +346,5 @@ say() {
 
 export PATH=${PATH}:${HOME}/Software/openCARP.master/build/bin/
 
-source $HOME/.accounting
+# source $HOME/.accounting
+export GUIX_LOCPATH="$HOME/.guix-profile/lib/locale"
