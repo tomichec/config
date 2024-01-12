@@ -247,6 +247,9 @@ alias feh='feh -FZ'                    # image viewer (fullscreen autoscaled)
 alias mkdir='mkdir -p -v'
 alias ping='ping -c 2'
 alias evince='background noout evince' # suspend output and run in background
+alias mattermost='background noout mattermost-desktop' # suspend output and run in background
+alias signal='background noout signal-desktop' # suspend output and run in background
+alias telegram='background noout telegram-desktop' # suspend output and run in background
 # }}}
 
 ## ls ## {{{
