@@ -622,6 +622,7 @@ before packages are loaded."
   ;;         (sequence "REPORT" "BUG" "KNOWNCAUSE" "|" "FIXED")
   ;;         (sequence "|" "CANCELED")))
 
+  (require 'sqlite3)
   )
 
 
