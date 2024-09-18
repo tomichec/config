@@ -38,7 +38,7 @@ This function should only modify configuration layer settings."
      docker
      perl5
      html
-     rust
+     ;; rust
      javascript
      yaml
      python
