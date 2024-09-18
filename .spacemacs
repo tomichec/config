@@ -604,7 +604,25 @@ before packages are loaded."
   ;; (global-command-log-mode)
 
   (setq org-startup-truncated nil)
-)
+
+  (with-eval-after-load 'org
+    (setq org-directory "~/Notes/org/")
+    )
+
+  (with-eval-after-load 'org
+    (setq org-agenda-files (list org-directory))
+    )
+
+  ;; https://orgmode.org/manual/TODO-Extensions.html
+  (setq org-todo-keywords
+        '((sequence "TODO" "WAITING" "|" "DONE" "CANCELED")))
+
+  ;; (setq org-todo-keywords
+  ;;       '((sequence "TODO" "|" "DONE")
+  ;;         (sequence "REPORT" "BUG" "KNOWNCAUSE" "|" "FIXED")
+  ;;         (sequence "|" "CANCELED")))
+
+  )
 
 
 ;; Do not write anything past this comment. This is where Emacs will
