@@ -35,6 +35,7 @@ This function should only modify configuration layer settings."
    '(octave
      typescript
      csv
+     docker
      perl5
      html
      rust
